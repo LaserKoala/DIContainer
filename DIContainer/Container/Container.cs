@@ -42,19 +42,5 @@ namespace DIContainer.Container
 
             return (SomeType)component.GetInstance(this);
         }
-
-
-        public bool Contains<SomeType>()
-        {
-            if (registeredComponents
-                 .Where(registeredComponent => registeredComponent.IsService<SomeType>())
-                 .FirstOrDefault()
-                 != null)
-            {
-                return true;
-            }
-
-            return false;
-        }
     }
 }

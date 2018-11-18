@@ -21,13 +21,7 @@ namespace DIContainer.Container
             var method = typeof(Container).GetMethod("Contains");
             var constructor = componentType
                 .GetConstructors()
-                .Where(constr => constr
-                    .GetParameters()
-                    .Where(param => (bool)method
-                                        .MakeGenericMethod(param.ParameterType)
-                                        .Invoke(container, null))
-                 == null)
-                 .FirstOrDefault();
+                .FirstOrDefault();
 
             if (constructor == null)
             {

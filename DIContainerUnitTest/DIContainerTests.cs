@@ -10,6 +10,7 @@ using System.Text;
 
 namespace DIContainerUnitTest
 {
+    [TestClass]
     public class ContainerTests
     {
         [TestMethod]
@@ -33,6 +34,21 @@ namespace DIContainerUnitTest
             Assert.IsNotNull(someInstance);
             Assert.IsInstanceOfType(someInstance, typeof(IWeapon));
         }
+
+        [TestMethod]
+        public void SimpleRegSingleInstance()
+        {
+            var container = new Container();
+            container.RegisterType<Sword>().As<IWeapon>().SingleInstance();
+            var firstWeapon = container.Resolve<IWeapon>();
+            var secondWeapon = container.Resolve<IWeapon>();
+
+            Assert.IsNotNull(firstWeapon);
+            Assert.IsNotNull(secondWeapon);
+            Assert.AreSame(firstWeapon, secondWeapon);
+        }
+
+
 
         [TestMethod]
         public void TryingResolveInterface()
