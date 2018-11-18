@@ -53,6 +53,7 @@ namespace DIContainerUnitTest
         [TestMethod]
         public void TryingResolveInterface()
         {
+
             var container = new Container();
             container.RegisterType<IWeapon>();
 
