@@ -8,8 +8,6 @@ namespace DIContainer.Container
     public class Container : IContainer
     {
         private readonly IList<IRegisteredComponent> registeredComponents = new List<IRegisteredComponent>();
-        // private bool IsBuilded = false;
-
 
         public IRegisteredComponent RegisterType<TComponent>()
         {
@@ -41,20 +39,6 @@ namespace DIContainer.Container
             }
 
             return (SomeType)component.GetInstance(this);
-        }
-
-
-        public bool Contains<SomeType>()
-        {
-            if (registeredComponents
-                 .Where(registeredComponent => registeredComponent.IsService<SomeType>())
-                 .FirstOrDefault()
-                 != null)
-            {
-                return true;
-            }
-
-            return false;
         }
     }
 }

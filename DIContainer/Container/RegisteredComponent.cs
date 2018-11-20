@@ -61,12 +61,12 @@ namespace DIContainer.Container
             {
                 if (Instance == null)
                 {
-                    Instance = InstanceCreator.CreateInstance(this, container);
+                    Instance = InstanceBuilder.CreateInstance(this, container);
                 }
                 return Instance;
             }
 
-            return InstanceCreator.CreateInstance(this, container);
+            return InstanceBuilder.CreateInstance(this, container);
         }
     }
 }
