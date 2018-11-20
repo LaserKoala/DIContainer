@@ -3,10 +3,6 @@ using ContainerTests.TestClasses.Weapon.Interfaces;
 using DIContainer.Container;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace DIContainerUnitTest
 {
@@ -29,10 +25,10 @@ namespace DIContainerUnitTest
         {
             var container = new Container();
             container.RegisterType<Sword>().As<IWeapon>();
-            var someInstance = container.Resolve<IWeapon>();
+            var weaponInstance = container.Resolve<IWeapon>();
 
-            Assert.IsNotNull(someInstance);
-            Assert.IsInstanceOfType(someInstance, typeof(IWeapon));
+            Assert.IsNotNull(weaponInstance);
+            Assert.IsInstanceOfType(weaponInstance, typeof(IWeapon));
         }
 
         [TestMethod]

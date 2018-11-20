@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace DIContainer.Container
 {
-    class InstanceCreator
+    class InstanceBuilder
     {
         public static object CreateInstance(RegisteredComponent registeredComponent, IContainer container)
         {
@@ -25,7 +25,7 @@ namespace DIContainer.Container
 
             if (constructor == null)
             {
-                throw new Exception("Нет такоого конструктора");
+                throw new InvalidOperationException($"Cannot resolve {registeredComponent.GetComponentType()}  ");
             }
 
             return Activator.CreateInstance(componentType, ResolveArguments(constructor, container));

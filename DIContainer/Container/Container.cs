@@ -8,8 +8,6 @@ namespace DIContainer.Container
     public class Container : IContainer
     {
         private readonly IList<IRegisteredComponent> registeredComponents = new List<IRegisteredComponent>();
-        // private bool IsBuilded = false;
-
 
         public IRegisteredComponent RegisterType<TComponent>()
         {
