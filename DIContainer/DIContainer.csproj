@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="Container\Container.cs" />
     <Compile Include="Container\InstanceBuilder.cs" />
-    <Compile Include="Container\Interface\IContainer.cs" />
-    <Compile Include="Container\Interface\IRegisteredComponent.cs" />
+    <Compile Include="Container\Interfaces\IContainer.cs" />
+    <Compile Include="Container\Interfaces\IRegisteredComponent.cs" />
     <Compile Include="Container\RegisteredComponent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
